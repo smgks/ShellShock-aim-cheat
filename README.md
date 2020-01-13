@@ -17,3 +17,5 @@ Currently only works on monitor resolution 1920 * 1080
 - fix the visualization of the trajectory
 - Add wind direction
 - Add screen resolution scale
+
+> calculations based on https://steamcommunity.com/sharedfiles/filedetails/?id=1327582953
