@@ -16,11 +16,19 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+public:
     QLabel *label;
+
+protected:
     void mousePressEvent(QMouseEvent *event) override;
     void keyPressEvent(QKeyEvent *event) override;
-    void keyReleaseEvent(QKeyEvent *event) override;
+    void keyReleaseEvent(QKeyEvent *event) override; 
+
+private:
     float calculate(int angle);
+    float calculateSpeed();
+    void drawGraph(float power);
+    QString redText(QString str);
 
 private:
     bool _ctrl = false;
@@ -32,9 +40,14 @@ private:
     QPoint _end{0,0};
     QString _num = "00";
 
+    QGraphicsView *view = new QGraphicsView(this);
+    QGraphicsScene *scene = new QGraphicsScene(this);
+
     int _winSize = 0;
     int _sx = 0;
     int _sy = 0;
+
+    int _angle = 0;
 
     const float _gravity = -379.106;
     const float _reg = 0.518718;
